@@ -17,6 +17,8 @@ h2 {
 	color:#cc0000;
 	font-size: 30px;
 	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
 }
 </style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -26,6 +28,7 @@ $(document).ready(function(){
     $('#button').click(function(){
         var toAdd = $('input[name=checkListItem]').val();
         $('.list').append('<div class="item">' + toAdd + '</div>');
+		document.getElementById('clear-demo').value = ''
     });
     $(document).on('click', '.item', function(){
     $(this).slideUp();
@@ -39,7 +42,6 @@ $(document).ready(function(){
 </script>
 	</head>
 	<body>
-		
 		<div data-role="page">
 			<div data-lrole="header">
 				<h2>Shopping List</h2>
@@ -47,11 +49,10 @@ $(document).ready(function(){
 			
 			<div data-role="main" class="ui-content">
 				<form name="checkListForm">
-					<input type="text" name="checkListItem" placeholder="add your stuff" id="clear-demo" data-clear-btn="true"></input>
+					<input type="text" name="checkListItem" placeholder="add your stuff" id="clear-demo"></input>
 				</form>
-				<a href="#" id="button" data-role="button" data-rel="external" data-theme="a" class="ui-link ui-btn ui-btn-a ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-right" role="button">Add</a>
-			<br/>
 				<div class="list"></div>
+				<a href="#" id="button" data-role="button" data-rel="external" data-theme="a" class="ui-link ui-btn ui-btn-a ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-right" role="button">Add</a>
 			</div>
 
 	</div>
